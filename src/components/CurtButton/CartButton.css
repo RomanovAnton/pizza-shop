@@ -1,0 +1,31 @@
+.cart-button {
+  display: flex;
+  width: 150px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  background: #fe5f1e;
+  border-radius: 30px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cart-button:hover {
+  opacity: 0.8;
+}
+
+.cart-button__sum {
+  color: #ffffff;
+  border-right: 1px solid #ffffff;
+  padding-right: 13px;
+}
+.cart-button-block {
+  padding-left: 13px;
+  display: flex;
+  gap: 8px;
+}
