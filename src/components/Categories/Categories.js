@@ -11,7 +11,6 @@ export default function Categories() {
     "Острая",
     "Закрытые",
   ];
-
   const [currentCategory, setCurrentCategory] = useState(0);
 
   return (

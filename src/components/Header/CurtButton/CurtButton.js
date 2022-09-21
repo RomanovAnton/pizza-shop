@@ -1,5 +1,5 @@
 import React from "react";
-import cart from "../../images/cart.svg";
+import cart from "../../../images/cart.svg";
 import "./CartButton.css";
 
 export default function CurtButton() {

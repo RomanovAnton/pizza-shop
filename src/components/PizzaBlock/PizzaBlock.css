@@ -1,0 +1,70 @@
+.pizza-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 460px;
+  margin: 0;
+}
+
+.pizza-block__top {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pizza-block__name {
+  margin: 11px auto 22px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.constructor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #f3f3f3;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.015em;
+}
+.constructor__list {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 7px;
+}
+.constructor__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 100%;
+  background: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+  border-radius: 5px;
+}
+.constructor__item_active {
+  background: #ffffff;
+}
+
+.pizza-block__bottom {
+  width: 100%;
+  margin-top: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 36px;
+}
+.pizza-block__price {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: 0.015em;
+}
