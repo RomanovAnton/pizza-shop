@@ -1,5 +1,5 @@
 import React from "react";
-import cart from "../../../assets/header-btn-cart-icon.svg";
+import cart from "../../../assets/cart-icon.svg";
 import "./CartButton.scss";
 
 export default function CartButton() {
