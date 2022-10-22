@@ -8,25 +8,25 @@
   border: 1px solid #b3b3b3;
   border-radius: 30px;
   transition: 0.3s;
-}
-.search__icon {
-  width: 15px;
-  height: 15px;
-  margin: 5px;
-}
-.search__input {
-  border: none;
-  width: 250px;
-  transition: 0.3s;
+
+  &__search-icon {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+  }
+  &__input {
+    border: none;
+    width: 250px;
+    transition: 0.3s;
+  }
+  &__clear-icon {
+    width: 10px;
+    height: 10px;
+    justify-self: flex-end;
+  }
 }
 
 .search:focus-within {
   box-shadow: 0px 0px 10px 10px rgba(254, 95, 30, 0.1);
   border-color: rgba(254, 95, 30, 0.1);
-}
-
-.search__clear-icon {
-  width: 10px;
-  height: 10px;
-  justify-self: flex-end;
 }

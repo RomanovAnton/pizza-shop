@@ -1,0 +1,10 @@
+@import "./variables";
+
+body {
+  background-color: $main-color;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  color: $black-text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

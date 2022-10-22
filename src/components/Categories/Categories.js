@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Sort from "../Sort/Sort";
-import "./Categories.css";
+import "./Categories.scss";
 
 export default function Categories() {
   const categories = [
@@ -15,13 +14,11 @@ export default function Categories() {
 
   return (
     <div className="categories">
-      <ul className="categories__list">
+      <ul>
         {categories.map((el, idx) => (
           <li
             className={
-              currentCategory === idx
-                ? "categories__item categories__item_active"
-                : "categories__item"
+              currentCategory === idx ? "active" : ""
             }
             key={idx}
             onClick={() => setCurrentCategory(idx)}
@@ -30,7 +27,6 @@ export default function Categories() {
           </li>
         ))}
       </ul>
-      <Sort />
     </div>
   );
 }

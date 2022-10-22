@@ -1,19 +1,19 @@
 import React, { useContext } from "react";
 import DataContext from "../../context/DataContext";
 import PizzaBlock from "../PizzaBlock/PizzaBlock";
-import "./PizzaList.css";
+import styles from "./PizzaList.module.scss";
 
 export default function PizzaList() {
   const data = useContext(DataContext);
-  console.log(data);
+
   return (
     <>
-      <h2 className="title">Все пиццы</h2>
-      <ul className="pizza-list">
+      <h2 className={styles.title}>Все пиццы</h2>
+      <ul className={styles.list}>
         {data &&
-          data.map((item) => (
-            <li key={item.id}>
-              <PizzaBlock card={item} />
+          data.map((item, idx) => (
+            <li key={idx}>
+              <PizzaBlock item={item} />
             </li>
           ))}
       </ul>

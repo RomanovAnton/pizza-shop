@@ -8,12 +8,12 @@ import Cart from "../../pages/Cart/Cart";
 import getPizza from "../utils/Api";
 import DataContext from "../../context/DataContext";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const [data, setData] = useState(null);
   useEffect(() => {
-    getPizza().then((res) => setData(res));
+    getPizza().then((res) => setData(res.slice(0, 10)));
   }, []);
 
   return (

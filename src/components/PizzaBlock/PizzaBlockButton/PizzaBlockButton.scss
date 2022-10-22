@@ -1,0 +1,46 @@
+@import "../../../sass/_variables.scss";
+@import "../../../sass/mixins";
+
+.block-button {
+  @include flex-centre;
+  justify-content: center;
+  gap: 3px;
+  width: 132px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: $orange-color;
+  border: 1px solid $orange-color;
+  border-radius: 30px;
+  background: $main-color;
+  transition: 0.3s;
+
+  &__count {
+    @include flex-centre;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: $orange-color;
+    color: $main-color;
+  }
+
+  &__logo {
+    fill: $orange-color;
+  }
+
+  &:hover {
+    background-color: $orange-color;
+    color: $main-color;
+  }
+
+  &:hover &__logo {
+    fill: $main-color;
+  }
+
+  &:hover &__count {
+    background-color: $main-color;
+    color: $orange-color;
+  }
+}
