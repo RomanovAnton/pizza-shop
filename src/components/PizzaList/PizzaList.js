@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import DataContext from "../../context/DataContext";
+import React from "react";
+import { useSelector } from "react-redux";
 import PizzaBlock from "../PizzaBlock/PizzaBlock";
 import styles from "./PizzaList.module.scss";
 
 export default function PizzaList() {
-  const data = useContext(DataContext);
+  const data = useSelector((state) => state.pizzas.items);
 
   return (
     <>

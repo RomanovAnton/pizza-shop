@@ -1,33 +1,32 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import fetchPizzas from "../../redux/asyncAction";
 import Header from "../Header/Header";
 import Home from "../../pages/Home/Home";
 import CurrentPizza from "../../pages/CurrentPizza/CurrentPizza";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import Cart from "../../pages/Cart/Cart";
-import getPizza from "../utils/Api";
-import DataContext from "../../context/DataContext";
 
 import "./App.scss";
 
 function App() {
-  const [data, setData] = useState(null);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    getPizza().then((res) => setData(res.slice(0, 10)));
+    dispatch(fetchPizzas());
   }, []);
 
   return (
-    <DataContext.Provider value={data}>
-      <div className="container">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:pizzaId" element={<CurrentPizza />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </div>
-    </DataContext.Provider>
+    <div className="container">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:pizzaId" element={<CurrentPizza />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </div>
   );
 }
 
