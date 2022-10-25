@@ -13,7 +13,8 @@ const pizzasSlice = createSlice({
       state.status = "loading";
     },
     [fetchPizzas.fulfilled]: (state, action) => {
-      state.items = action.payload.slice(0, 10);
+      state.items = action.payload;
+      state.status = "resolved";
       state.error = "";
     },
     [fetchPizzas.rejected]: (state) => {
