@@ -9,7 +9,8 @@
   justify-content: center;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 280px);
+  // grid-template-columns: repeat(auto-fit, 280px);
+  grid-template-columns: repeat(3, 280px);
   column-gap: 65px;
   row-gap: 75px;
   margin: 45px auto 45px;

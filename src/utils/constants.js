@@ -1,2 +1,1 @@
-export const BASE_URL =
-  "https://626d16545267c14d5677d9c2.mockapi.io/items?page=1&limit=10&category=3&";
+export const BASE_URL ='https://63582d43c26aac906f3d916a.mockapi.io/items/?'

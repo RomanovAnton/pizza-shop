@@ -8,7 +8,7 @@ import styles from "./PizzaList.module.scss";
 export default function PizzaList() {
   const { items, status } = useSelector((state) => state.pizzas);
   const skeletArr = [...Array(10).keys()];
-
+  
 console.log(items)
 
 

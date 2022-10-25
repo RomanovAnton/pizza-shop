@@ -12,7 +12,6 @@ import "./App.scss";
 function App() {
   const dispatch = useDispatch();
   const curCategory = useSelector((state) => state.filters.category);
-  console.log(curCategory);
 
   useEffect(() => {
     dispatch(fetchPizzas(curCategory));
