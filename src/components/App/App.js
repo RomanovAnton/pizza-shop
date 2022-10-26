@@ -11,11 +11,11 @@ import "./App.scss";
 
 function App() {
   const dispatch = useDispatch();
-  const curCategory = useSelector((state) => state.filters.category);
+  const { curCategory, searchValue } = useSelector((state) => state.filters);
 
   useEffect(() => {
-    dispatch(fetchPizzas(curCategory));
-  }, [curCategory]);
+    dispatch(fetchPizzas({ curCategory, searchValue }));
+  }, [curCategory, searchValue]);
 
   return (
     <div className="container">

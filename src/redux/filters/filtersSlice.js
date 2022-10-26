@@ -5,6 +5,7 @@ const filtersSlice = createSlice({
   initialState: {
     category: 0,
     sort: "по популярности",
+    searchValue: "",
   },
   reducers: {
     setCategory: (state, action) => {
@@ -13,8 +14,11 @@ const filtersSlice = createSlice({
     setSort: (state, action) => {
       state.sort = action.payload;
     },
+    setSearchValue: (state, action) => {
+      state.searchValue = action.payload;
+    },
   },
 });
 
-export const { setCategory, setSort } = filtersSlice.actions;
+export const { setCategory, setSort, setSearchValue } = filtersSlice.actions;
 export default filtersSlice.reducer;
