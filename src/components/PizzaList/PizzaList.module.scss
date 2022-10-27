@@ -3,6 +3,10 @@
   font-size: 32px;
   line-height: 39px;
   letter-spacing: 0.01em;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+    margin-top: 20px;
+  }
 }
 
 .list {
@@ -14,4 +18,12 @@
   column-gap: 65px;
   row-gap: 75px;
   margin: 45px auto 45px;
+
+  @media screen and (max-width: 1050px) {
+    grid-template-columns: repeat(2, 280px);
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(1, 280px);
+  }
 }
