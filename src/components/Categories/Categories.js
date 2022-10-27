@@ -14,7 +14,7 @@ const categories = [
 
 export default function Categories() {
   const dispatch = useDispatch();
-  const curCategory = useSelector((state) => state.filters.category);
+  const curCategory = useSelector((state) => state.filters.curCategory);
 
   return (
     <div className="categories">

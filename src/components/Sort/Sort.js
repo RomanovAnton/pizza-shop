@@ -1,12 +1,18 @@
-import React, { useState, useRef } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setSortParams } from "../../redux/filters/filtersSlice";
 import "./Sort.scss";
 
 export default function Sort() {
   const popupRef = useRef();
-  const sortType = ["по популярности", "по цене (asc)", "по цене (desc)"];
-  const [currentType, setCurrentType] = useState("по популярности");
+  const dispatch = useDispatch();
+  const sortParams = useSelector((state) => state.filters.sortParams);
   const [isOpen, setIsOpen] = useState(false);
+  const sortType = [
+    { name: "по популярности", order: "-rating" },
+    { name: "по цене (asc)", order: "price" },
+    { name: "по цене (desc)", order: "-price" },
+  ];
 
   useEffect(() => {
     const handleClickOutSide = (evt) => {
@@ -14,9 +20,7 @@ export default function Sort() {
         setIsOpen(false);
       }
     };
-
     document.addEventListener("click", handleClickOutSide);
-
     return () => {
       document.addEventListener("click", handleClickOutSide);
     };
@@ -26,24 +30,22 @@ export default function Sort() {
     <div className="sort" ref={popupRef}>
       <p className="sort__caption">Сортировка по:</p>
       <span className="sort__current-type" onClick={() => setIsOpen(true)}>
-        {currentType}
+        {sortParams.name}
       </span>
 
       {isOpen && (
         <div className="sort__menu">
           <ul>
-            {sortType.map((nameType, idx) => (
+            {sortType.map((el, idx) => (
               <li
                 key={idx}
-                className={
-                  idx === sortType.indexOf(currentType) ? "active" : ""
-                }
+                className={el.name === sortParams.name ? "active" : ""}
                 onClick={() => {
-                  setCurrentType(sortType[idx]);
+                  dispatch(setSortParams(el));
                   setIsOpen(false);
                 }}
               >
-                {nameType}
+                {el.name}
               </li>
             ))}
           </ul>

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import PizzaBlockButton from "./PizzaBlockButton/PizzaBlockButton";
+import { DEFAULT_SIZE } from "../../utils/constants";
 import "./PizzaBlock.scss";
 
 export default function PizzaBlock({ item }) {
   const type = ["тонкое", "традиционное"];
   const [currentType, setCurrentType] = useState(type[0]);
-  const [currentSize, setCurrentSize] = useState(null);
+  const [currentSize, setCurrentSize] = useState(DEFAULT_SIZE);
 
   return (
     <div className="pizza-block">
