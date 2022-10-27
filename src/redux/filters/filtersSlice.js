@@ -4,7 +4,7 @@ const filtersSlice = createSlice({
   name: "filters",
   initialState: {
     curCategory: 0,
-    sortParams: { name: "по популярности", order: "rating" },
+    sortParams: { name: "по популярности", order: "-rating" },
     searchValue: "",
   },
   reducers: {

@@ -43,7 +43,11 @@ export default function PizzaBlock({ item }) {
       </div>
       <div className="pizza-block__bottom">
         <span className="pizza-block__price">{`От ${item.price} ₽`}</span>
-        <PizzaBlockButton item={item} />
+        <PizzaBlockButton
+          item={item}
+          currentType={currentType}
+          currentSize={currentSize}
+        />
       </div>
     </div>
   );
