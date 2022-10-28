@@ -23,7 +23,7 @@
     color: #777777;
   }
 
-  &__image { 
+  &__image {
     width: 200px;
     height: 200px;
   }
@@ -35,8 +35,15 @@
     align-items: center;
     width: 211px;
     height: 55px;
+    border: 1px solid black;
+    color: black;
+    background-color: $main-color;
+    border-radius: 30px;
+    transition: 0.2s;
+  }
+
+  &__btn:hover {
     background-color: black;
     color: $white-text;
-    border-radius: 30px;
   }
 }
