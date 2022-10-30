@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import PizzaBlockButton from "./PizzaBlockButton/PizzaBlockButton";
 import { DEFAULT_SIZE } from "../../utils/constants";
 import "./PizzaBlock.scss";
@@ -7,13 +8,12 @@ export default function PizzaBlock({ item }) {
   const type = ["тонкое", "традиционное"];
   const [currentType, setCurrentType] = useState(type[0]);
   const [currentSize, setCurrentSize] = useState(DEFAULT_SIZE);
-
   return (
     <div className="pizza-block">
-      <div className="pizza-block__top">
+      <Link to={`/${item.id}`} className="pizza-block__top">
         <img src={item.imageUrl} alt="pizza" />
         <h3>{item.title}</h3>
-      </div>
+      </Link>
       <div className="constructor">
         <ul>
           {item.types &&

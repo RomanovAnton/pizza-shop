@@ -8,6 +8,7 @@ const pizzasSlice = createSlice({
     status: "",
     error: "",
   },
+
   extraReducers: {
     [fetchPizzas.pending]: (state) => {
       state.status = "loading";
@@ -23,5 +24,4 @@ const pizzasSlice = createSlice({
   },
 });
 
-export const {} = pizzasSlice.actions;
 export default pizzasSlice.reducer;

@@ -1,0 +1,29 @@
+.not-found-block {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  &__image {
+    width: 56px;
+    height: 56px;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__text:first-child {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  &__text:last-child {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #97979b;
+  }
+}
