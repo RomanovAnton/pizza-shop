@@ -6,7 +6,8 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import "./sass/_main.scss";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root") as Element);
+
 root.render(
   <BrowserRouter>
     <Provider store={store}>

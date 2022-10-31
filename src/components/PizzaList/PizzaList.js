@@ -20,8 +20,8 @@ export default function PizzaList() {
           ))}
         {status === "resolved" &&
           items.map((item, idx) => (
-            <li>
-              <PizzaBlock key={idx} item={item} />
+            <li key={idx}>
+              <PizzaBlock item={item} />
             </li>
           ))}
       </ul>

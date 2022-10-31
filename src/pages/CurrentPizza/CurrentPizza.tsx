@@ -5,7 +5,14 @@ import { BASE_URL } from "../../utils/constants";
 import styles from "./CurrentPizza.module.scss";
 
 export default function CurrentPizza() {
-  const [currentItem, setCurrentItem] = useState({});
+  const [currentItem, setCurrentItem] = useState<{
+    imageUrl: string;
+    title: string;
+    price: number;
+  }>();
+
+  console.log(currentItem);
+
   const param = useParams();
   const navigate = useNavigate();
 
@@ -23,8 +30,12 @@ export default function CurrentPizza() {
   }, [param]);
 
   return (
-    <div className={styles.root}>
-      <img src={currentItem.imageUrl} alt="pizza-img" />
-    </div>
+    currentItem && (
+      <div className={styles.root}>
+        <img src={currentItem.imageUrl} alt="pizza-img" />
+        <h3>{currentItem.title}</h3>
+        <p>{`${currentItem.price}₽`}</p>
+      </div>
+    )
   );
 }
