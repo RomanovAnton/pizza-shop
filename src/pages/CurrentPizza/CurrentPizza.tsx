@@ -11,8 +11,6 @@ export default function CurrentPizza() {
     price: number;
   }>();
 
-  console.log(currentItem);
-
   const param = useParams();
   const navigate = useNavigate();
 

@@ -12,9 +12,9 @@ const categories = [
   "Закрытые",
 ];
 
-export default function Categories() {
+export const Categories: React.FC = () => {
   const dispatch = useDispatch();
-  const curCategory = useSelector((state) => state.filters.curCategory);
+  const curCategory = useSelector((state: any) => state.filters.curCategory);
 
   return (
     <div className="categories">
@@ -31,4 +31,4 @@ export default function Categories() {
       </ul>
     </div>
   );
-}
+};

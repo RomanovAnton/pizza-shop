@@ -3,19 +3,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSortParams } from "../../redux/filters/filtersSlice";
 import "./Sort.scss";
 
-export default function Sort() {
-  const popupRef = useRef();
+export const Sort: React.FC = () => {
+  const popupRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
-  const sortParams = useSelector((state) => state.filters.sortParams);
+  const sortParams = useSelector((state: any) => state.filters.sortParams);
   const [isOpen, setIsOpen] = useState(false);
-  const sortType = [
+
+  type SortItem = {
+    name: string;
+    order: string;
+  };
+
+  const sortType: SortItem[] = [
     { name: "по популярности", order: "-rating" },
     { name: "по цене (asc)", order: "price" },
     { name: "по цене (desc)", order: "-price" },
   ];
 
   useEffect(() => {
-    const handleClickOutSide = (evt) => {
+    const handleClickOutSide = (evt: any) => {
       if (!evt.path.includes(popupRef.current)) {
         setIsOpen(false);
       }
@@ -53,4 +59,4 @@ export default function Sort() {
       )}
     </div>
   );
-}
+};

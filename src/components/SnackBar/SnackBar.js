@@ -3,7 +3,7 @@ import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
-export default function SimpleSnackbar({ handleClose, open }) {
+export const SimpleSnackbar = ({ handleClose, open }) => {
   const action = (
     <>
       <IconButton
@@ -26,4 +26,4 @@ export default function SimpleSnackbar({ handleClose, open }) {
       action={action}
     />
   );
-}
+};

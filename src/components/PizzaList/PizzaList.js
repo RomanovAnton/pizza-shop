@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
-import PizzaBlock from "../PizzaBlock/PizzaBlock";
+import { NotFoundPage } from "../../pages/NotFoundPage/NotFoundPage";
+import { PizzaBlock } from "../PizzaBlock/PizzaBlock";
 import { Skeleton } from "../PizzaBlock/Skeleton";
 import styles from "./PizzaList.module.scss";
 
-export default function PizzaList() {
+export const PizzaList = () => {
   const { items, status } = useSelector((state) => state.pizzas);
   const skeletArr = [...Array(10).keys()];
   return (
@@ -28,4 +28,4 @@ export default function PizzaList() {
       {status === "rejected" && <NotFoundPage />}
     </>
   );
-}
+};

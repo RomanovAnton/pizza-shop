@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import fetchPizzas from "../../redux/pizzas/asyncAction";
-import Header from "../Header/Header";
+import { Header } from "../Header/Header";
 import Home from "../../pages/Home/Home";
 import CurrentPizza from "../../pages/CurrentPizza/CurrentPizza";
-import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
+import { NotFoundPage } from "../../pages/NotFoundPage/NotFoundPage";
 import Cart from "../../pages/Cart/Cart";
 import "./App.scss";
 

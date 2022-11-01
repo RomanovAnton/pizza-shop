@@ -4,8 +4,22 @@ import PizzaBlockButton from "./PizzaBlockButton/PizzaBlockButton";
 import { DEFAULT_SIZE } from "../../utils/constants";
 import "./PizzaBlock.scss";
 
-export default function PizzaBlock({ item }) {
-  const type = ["тонкое", "традиционное"];
+const type = ["тонкое", "традиционное"];
+type PizzaItem = {
+  item: {
+    category: number;
+    id: string;
+    imageUrl: string;
+    price: number;
+    rating: number;
+    sizes: number[];
+    title: string;
+    types: number[];
+  };
+};
+
+export const PizzaBlock: React.FC<PizzaItem> = ({ item }) => {
+
   const [currentType, setCurrentType] = useState(type[0]);
   const [currentSize, setCurrentSize] = useState(DEFAULT_SIZE);
   return (
@@ -51,4 +65,4 @@ export default function PizzaBlock({ item }) {
       </div>
     </div>
   );
-}
+};

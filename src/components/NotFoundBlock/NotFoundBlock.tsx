@@ -2,7 +2,7 @@ import React from "react";
 import searchImage from "../assets/search-image.png";
 import "./NotFoundBlock.scss";
 
-export default function NotFoundBlock() {
+export const NotFoundBlock: React.FC = () => {
   return (
     <div className="not-found-block">
       <img
@@ -14,4 +14,4 @@ export default function NotFoundBlock() {
       <p className="not-found-block__text">Попробуй скорректировать запрос</p>
     </div>
   );
-}
+};

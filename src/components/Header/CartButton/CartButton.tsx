@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import cart from "../../../assets/cart-icon.svg";
 import "./CartButton.scss";
 
-export default function CartButton() {
-  const { totalCount, totalPrice } = useSelector((state) => state.cart);
+export const CartButton: React.FC = () => {
+  const { totalCount, totalPrice } = useSelector((state: any) => state.cart);
   return (
     <button className="button">
       <p>{`${totalPrice} ₽`}</p>
@@ -14,4 +14,4 @@ export default function CartButton() {
       </div>
     </button>
   );
-}
+};

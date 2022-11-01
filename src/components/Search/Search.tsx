@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setSearchValue } from "../../redux/filters/filtersSlice";
-import useDebounce from "../../hooks/useDebounce";
+import { useDebounce } from "../../hooks/useDebounce";
 import { ReactComponent as SearchIcon } from "../../assets/search-icon.svg";
 import clearIcon from "../../assets/search-clear-icon.svg";
 import "./Search.scss";
 
-export default function Search() {
+export const Search: React.FC = () => {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
   const debouncedValue = useDebounce(value, 250);
@@ -35,4 +35,4 @@ export default function Search() {
       )}
     </div>
   );
-}
+};

@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ReactComponent as PlusLogo } from "../../../assets/plus.svg";
 import { addItem, setTotal } from "../../../redux/cart/cartSlice";
-import SimpleSnackbar from "../../SnackBar/SnackBar";
+import { SimpleSnackbar } from "../../SnackBar/SnackBar";
 import "./PizzaBlockButton.scss";
 
 export default function PizzaBlockButton({ item, currentSize, currentType }) {
   const dispatch = useDispatch();
-
   const handleBtnClick = () => {
     dispatch(
       addItem({
@@ -32,7 +31,6 @@ export default function PizzaBlockButton({ item, currentSize, currentType }) {
     if (reason === "clickaway") {
       return;
     }
-    setOpen(false);
   };
 
   return (
