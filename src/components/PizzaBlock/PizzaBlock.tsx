@@ -6,6 +6,7 @@ import "./PizzaBlock.scss";
 
 const type = ["тонкое", "традиционное"];
 type PizzaItem = {
+  // import types !!!!
   item: {
     category: number;
     id: string;
@@ -19,7 +20,6 @@ type PizzaItem = {
 };
 
 export const PizzaBlock: React.FC<PizzaItem> = ({ item }) => {
-
   const [currentType, setCurrentType] = useState(type[0]);
   const [currentSize, setCurrentSize] = useState(DEFAULT_SIZE);
   return (

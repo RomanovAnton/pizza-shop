@@ -1,14 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { CartItem, CartSliceState } from "./types";
+
+const initialState: CartSliceState = {
+  cartItems: [],
+  totalCount: 0,
+  totalPrice: 0,
+};
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: {
-    cartItems: [],
-    totalCount: 0,
-    totalPrice: 0,
-  },
+  initialState,
   reducers: {
-    addItem: (state, action) => {
+    addItem: (state, action: PayloadAction<CartItem>) => {
       const isExist = state.cartItems.some(
         (item) => item._id === action.payload._id
       );
@@ -21,19 +24,19 @@ const cartSlice = createSlice({
         state.cartItems[dubbleIdx].count++;
       }
     },
-    incrementCount: (state, action) => {
+    incrementCount: (state, action: PayloadAction<string>) => {
       const idxCurElem = state.cartItems.findIndex(
         (item) => item._id === action.payload
       );
       state.cartItems[idxCurElem].count++;
     },
-    decrementCount: (state, action) => {
+    decrementCount: (state, action: PayloadAction<string>) => {
       const idxCurElem = state.cartItems.findIndex(
         (item) => item._id === action.payload
       );
       state.cartItems[idxCurElem].count--;
     },
-    deleteItem: (state, action) => {
+    deleteItem: (state, action: PayloadAction<string>) => {
       state.cartItems = state.cartItems.filter(
         (item) => item._id !== action.payload
       );
