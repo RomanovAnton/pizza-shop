@@ -1,8 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { IFilterSliceState } from "../filters/types";
+import { PizzaItem } from "./types";
 import { BASE_URL } from "../../utils/constants";
+import axios from "axios";
 
-const fetchPizzas = createAsyncThunk(
+const fetchPizzas = createAsyncThunk<PizzaItem[], IFilterSliceState>(
   "pizzas/fetchPizzas",
   async ({ curCategory, searchValue, sortParams }) => {
     const category = curCategory > 0 ? `category=${curCategory}` : "";

@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSortParams } from "../../redux/filters/filtersSlice";
+import { RootState } from "../../redux/store";
 import "./Sort.scss";
 
 export const Sort: React.FC = () => {
   const popupRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
-  const sortParams = useSelector((state: any) => state.filters.sortParams);
+  const sortParams = useSelector((state: RootState) => state.filters.sortParams);
   const [isOpen, setIsOpen] = useState(false);
 
   type SortItem = {

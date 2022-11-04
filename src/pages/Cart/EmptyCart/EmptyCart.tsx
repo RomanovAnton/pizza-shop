@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import emptyCart from "../../../assets/empty-cart-image.png";
 import "./EmptyCart.scss";
 
-export default function EmptyCart() {
+export const EmptyCart: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className="empty-cart">
@@ -18,4 +18,4 @@ export default function EmptyCart() {
       </button>
     </div>
   );
-}
+};

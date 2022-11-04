@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { BASE_URL } from "../../utils/constants";
 import styles from "./CurrentPizza.module.scss";
 
-export default function CurrentPizza() {
+export const CurrentPizza: React.FC = () => {
   const [currentItem, setCurrentItem] = useState<{
     imageUrl: string;
     title: string;
@@ -27,13 +27,13 @@ export default function CurrentPizza() {
     getItem();
   }, [param]);
 
-  return (
-    currentItem && (
-      <div className={styles.root}>
-        <img src={currentItem.imageUrl} alt="pizza-img" />
-        <h3>{currentItem.title}</h3>
-        <p>{`${currentItem.price}₽`}</p>
-      </div>
-    )
+  return currentItem ? (
+    <div className={styles.root}>
+      <img src={currentItem.imageUrl} alt="pizza-img" />
+      <h3>{currentItem.title}</h3>
+      <p>{`${currentItem.price}₽`}</p>
+    </div>
+  ) : (
+    <p>Загрузка...</p>
   );
-}
+};

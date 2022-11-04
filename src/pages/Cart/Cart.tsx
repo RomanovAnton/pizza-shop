@@ -2,17 +2,18 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { clearCart, setTotal } from "../../redux/cart/cartSlice";
-import CartItem from "./CartItem/CartItem";
-import EmptyCart from "./EmptyCart/EmptyCart";
+import { RootState } from "../../redux/store";
+import { EmptyCart } from "./EmptyCart/EmptyCart";
+import { CartItem } from "./CartItem/CartItem";
 import cartIcon from "../../assets/cart-icon-black.svg";
 import clearIcon from "../../assets/cart-clear-icon.svg";
 import "./Cart.scss";
 
-export default function Cart() {
+export const Cart: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { cartItems, totalCount, totalPrice } = useSelector(
-    (state) => state.cart
+    (state: RootState) => state.cart
   );
 
   return (
@@ -41,7 +42,7 @@ export default function Cart() {
           </div>
           <ul className="cart-list">
             {cartItems.map((item) => (
-              <CartItem item={item} key={item._id} />
+              <CartItem {...item} key={item._id} />
             ))}
           </ul>
           <div className="cart-total">
@@ -65,4 +66,4 @@ export default function Cart() {
       )}
     </div>
   );
-}
+};

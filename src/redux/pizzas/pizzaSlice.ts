@@ -4,7 +4,7 @@ import { PizzaItem, PizzaSliceState } from "./types";
 
 const initialState: PizzaSliceState = {
   items: [],
-  status: "",
+  status: "loading",
   error: "",
 };
 
@@ -31,6 +31,7 @@ const pizzasSlice = createSlice({
     );
     builder.addCase(fetchPizzas.rejected, (state) => {
       state.error = "ServerError";
+      state.status = "rejected";
     });
   },
 });

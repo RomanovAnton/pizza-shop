@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { TCartItem } from "../../../redux/cart/types";
 import {
   incrementCount,
   decrementCount,
@@ -9,7 +10,7 @@ import {
 import deleteIcon from "../../../assets/cart-delete-icon.svg";
 import "./CartItem.scss";
 
-export default function CartItem({ item }) {
+export const CartItem: React.FC<TCartItem> = (item) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -59,4 +60,4 @@ export default function CartItem({ item }) {
       />
     </div>
   );
-}
+};

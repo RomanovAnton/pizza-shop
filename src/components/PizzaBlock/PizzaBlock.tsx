@@ -1,25 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import PizzaBlockButton from "./PizzaBlockButton/PizzaBlockButton";
+import { PizzaBlockButton } from "./PizzaBlockButton/PizzaBlockButton";
 import { DEFAULT_SIZE } from "../../utils/constants";
+import { PizzaItem } from "../../redux/pizzas/types";
 import "./PizzaBlock.scss";
 
 const type = ["тонкое", "традиционное"];
-type PizzaItem = {
-  // import types !!!!
-  item: {
-    category: number;
-    id: string;
-    imageUrl: string;
-    price: number;
-    rating: number;
-    sizes: number[];
-    title: string;
-    types: number[];
-  };
-};
 
-export const PizzaBlock: React.FC<PizzaItem> = ({ item }) => {
+export const PizzaBlock: React.FC<PizzaItem> = (item) => {
   const [currentType, setCurrentType] = useState(type[0]);
   const [currentSize, setCurrentSize] = useState(DEFAULT_SIZE);
   return (

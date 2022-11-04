@@ -1,18 +1,19 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import fetchPizzas from "../../redux/pizzas/asyncAction";
+import { useSelector } from "react-redux";
+import { RootState, useAppDispatch } from "../../redux/store";
 import { Header } from "../Header/Header";
-import Home from "../../pages/Home/Home";
-import CurrentPizza from "../../pages/CurrentPizza/CurrentPizza";
 import { NotFoundPage } from "../../pages/NotFoundPage/NotFoundPage";
-import Cart from "../../pages/Cart/Cart";
+import { CurrentPizza } from "../../pages/CurrentPizza/CurrentPizza";
+import { Cart } from "../../pages/Cart/Cart";
+import Home from "../../pages/Home/Home";
+import fetchPizzas from "../../redux/pizzas/asyncAction";
 import "./App.scss";
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { curCategory, searchValue, sortParams } = useSelector(
-    (state) => state.filters
+    (state: RootState) => state.filters
   );
 
   useEffect(() => {

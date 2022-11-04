@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CartItem, CartSliceState } from "./types";
+import { TCartItem, CartSliceState } from "./types";
 
 const initialState: CartSliceState = {
   cartItems: [],
@@ -11,7 +11,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItem: (state, action: PayloadAction<CartItem>) => {
+    addItem: (state, action: PayloadAction<TCartItem>) => {
       const isExist = state.cartItems.some(
         (item) => item._id === action.payload._id
       );

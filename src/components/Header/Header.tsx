@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/header-pizza-logo.svg";
 import { Search } from "../Search/Search";
 import { CartButton } from "./CartButton/CartButton";
+import logo from "../../assets/header-pizza-logo.svg";
 import "./Header.scss";
 
 export const Header: React.FC = () => {

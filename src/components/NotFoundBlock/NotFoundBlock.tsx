@@ -1,5 +1,5 @@
 import React from "react";
-import searchImage from "../assets/search-image.png";
+import searchImage from "../../assets/search-icon.svg";
 import "./NotFoundBlock.scss";
 
 export const NotFoundBlock: React.FC = () => {
@@ -10,7 +10,7 @@ export const NotFoundBlock: React.FC = () => {
         alt="search-icon"
         className="not-found-block__image"
       />
-      <p className="not-found-block__text">Мы никого не нашли</p>
+      <p className="not-found-block__text">Результатов не найдено</p>
       <p className="not-found-block__text">Попробуй скорректировать запрос</p>
     </div>
   );

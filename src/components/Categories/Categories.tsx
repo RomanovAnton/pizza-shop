@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory } from "../../redux/filters/filtersSlice";
+import { RootState } from "../../redux/store";
 import "./Categories.scss";
 
 const categories = [
@@ -14,7 +15,7 @@ const categories = [
 
 export const Categories: React.FC = () => {
   const dispatch = useDispatch();
-  const curCategory = useSelector((state: any) => state.filters.curCategory);
+  const curCategory = useSelector((state: RootState) => state.filters.curCategory);
 
   return (
     <div className="categories">

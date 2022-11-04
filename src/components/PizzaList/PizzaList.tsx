@@ -1,13 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { NotFoundPage } from "../../pages/NotFoundPage/NotFoundPage";
+import { RootState } from "../../redux/store";
+import { NotFoundBlock } from "../NotFoundBlock/NotFoundBlock";
 import { PizzaBlock } from "../PizzaBlock/PizzaBlock";
 import { Skeleton } from "../PizzaBlock/Skeleton";
 import styles from "./PizzaList.module.scss";
+const skeletArr = [...Array(10).keys()];
 
-export const PizzaList = () => {
-  const { items, status } = useSelector((state) => state.pizzas);
-  const skeletArr = [...Array(10).keys()];
+export const PizzaList: React.FC = () => {
+  const { items, status } = useSelector((state: RootState) => state.pizzas);
+
   return (
     <>
       <h2 className={styles.title}>Все пиццы</h2>
@@ -18,14 +20,15 @@ export const PizzaList = () => {
               <Skeleton />
             </li>
           ))}
-        {status === "resolved" &&
+        {items.length > 0 &&
           items.map((item, idx) => (
             <li key={idx}>
-              <PizzaBlock item={item} />
+              <PizzaBlock {...item} />
             </li>
           ))}
       </ul>
-      {status === "rejected" && <NotFoundPage />}
+      {items.length === 0 && <NotFoundBlock />}
+      {status === "rejected" && <h3>Ошибка сервера!</h3>}
     </>
   );
 };
