@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.290b05e4.css",
+    "main.js": "/static/js/main.2997a2f6.js",
+    "static/media/empty-cart-image.png": "/static/media/empty-cart-image.db905d1f4b063162f25b.png",
+    "static/media/header-pizza-logo.svg": "/static/media/header-pizza-logo.56ac87032d8f6fdf863326acd06c0d97.svg",
+    "static/media/cart-icon-black.svg": "/static/media/cart-icon-black.dcd5168086a25b3307ba9f5524ca6e70.svg",
+    "static/media/cart-icon.svg": "/static/media/cart-icon.d05720f2b474db2145233cd2ce1d4e91.svg",
+    "static/media/cart-clear-icon.svg": "/static/media/cart-clear-icon.ceafcffb34cece0b1462c3505b170d88.svg",
+    "static/media/search-icon.svg": "/static/media/search-icon.f612e97a90bfd53dedc9945c78ef10a5.svg",
+    "index.html": "/index.html",
+    "static/media/search-clear-icon.svg": "/static/media/search-clear-icon.452be12b8f5d46ad997ffcbe6c83bf1e.svg",
+    "static/media/plus.svg": "/static/media/plus.607f99c1ba28afa6e33c7bcb4e392bf7.svg",
+    "static/media/cart-delete-icon.svg": "/static/media/cart-delete-icon.a4dcdffe459c2601ccb7fd3d34cc2e34.svg",
+    "main.290b05e4.css.map": "/static/css/main.290b05e4.css.map",
+    "main.2997a2f6.js.map": "/static/js/main.2997a2f6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.290b05e4.css",
+    "static/js/main.2997a2f6.js"
+  ]
+}
