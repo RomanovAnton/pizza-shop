@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { ReactComponent as PlusLogo } from "../../../assets/plus.svg";
 import { addItem, setTotal } from "../../../redux/cart/cartSlice";
 import { IPizzaButton } from "./types";
-// import { SnackBar } from "../../SnackBar/SnackBar";
 import "./PizzaBlockButton.scss";
+import { withSnackbar } from "../../SnackBar/SnackBarHOC";
 
 export const PizzaBlockButton: React.FC<IPizzaButton> = ({
   item,
   currentSize,
   currentType,
+  handleClick,
 }) => {
   const dispatch = useDispatch();
 
@@ -24,7 +25,7 @@ export const PizzaBlockButton: React.FC<IPizzaButton> = ({
       })
     );
     dispatch(setTotal());
-    // handleClick("Пицца добавлена!");
+    handleClick();
   };
 
   return (
@@ -36,3 +37,5 @@ export const PizzaBlockButton: React.FC<IPizzaButton> = ({
     </>
   );
 };
+
+export default withSnackbar(PizzaBlockButton);

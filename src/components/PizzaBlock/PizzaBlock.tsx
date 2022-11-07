@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { PizzaBlockButton } from "./PizzaBlockButton/PizzaBlockButton";
+import PizzaBlockButton from "./PizzaBlockButton/PizzaBlockButton";
 import { DEFAULT_SIZE } from "../../utils/constants";
 import { PizzaItem } from "../../redux/pizzas/types";
 import "./PizzaBlock.scss";
@@ -10,6 +10,7 @@ const type = ["тонкое", "традиционное"];
 export const PizzaBlock: React.FC<PizzaItem> = (item) => {
   const [currentType, setCurrentType] = useState(type[0]);
   const [currentSize, setCurrentSize] = useState(DEFAULT_SIZE);
+
   return (
     <div className="pizza-block">
       <Link to={`/${item.id}`} className="pizza-block__top">
@@ -45,6 +46,7 @@ export const PizzaBlock: React.FC<PizzaItem> = (item) => {
       </div>
       <div className="pizza-block__bottom">
         <span className="pizza-block__price">{`От ${item.price} ₽`}</span>
+
         <PizzaBlockButton
           item={item}
           currentType={currentType}

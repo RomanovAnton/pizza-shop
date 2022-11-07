@@ -6,7 +6,7 @@ import { Header } from "../Header/Header";
 import { NotFoundPage } from "../../pages/NotFoundPage/NotFoundPage";
 import { CurrentPizza } from "../../pages/CurrentPizza/CurrentPizza";
 import { Cart } from "../../pages/Cart/Cart";
-import Home from "../../pages/Home/Home";
+import { Home } from "../../pages/Home/Home";
 import fetchPizzas from "../../redux/pizzas/asyncAction";
 import "./App.scss";
 

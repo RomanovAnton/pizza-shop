@@ -4,4 +4,5 @@ export interface IPizzaButton {
   item: PizzaItem;
   currentSize: number;
   currentType: string;
+  handleClick: () => void;
 }
