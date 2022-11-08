@@ -1,8 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { TCartItem, CartSliceState } from "./types";
 
+const data = localStorage.getItem("cartItems");
+const initArr = data ? JSON.parse(data) : [];
+
 const initialState: CartSliceState = {
-  cartItems: [],
+  cartItems: initArr,
   totalCount: 0,
   totalPrice: 0,
 };

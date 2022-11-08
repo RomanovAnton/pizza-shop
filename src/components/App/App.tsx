@@ -12,6 +12,7 @@ import "./App.scss";
 
 function App() {
   const dispatch = useAppDispatch();
+  const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const { curCategory, searchValue, sortParams } = useSelector(
     (state: RootState) => state.filters
   );
@@ -19,6 +20,10 @@ function App() {
   useEffect(() => {
     dispatch(fetchPizzas({ curCategory, searchValue, sortParams }));
   }, [curCategory, searchValue, sortParams]);
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   return (
     <div className="container">
