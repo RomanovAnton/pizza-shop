@@ -9,6 +9,4 @@
 <img alt="ts" src="https://img.shields.io/badge/typescript-0079c9.svg?&style=flat-square&logo=typescript&logoColor=fff" />&nbsp;
 <img alt="sass" src="https://img.shields.io/badge/sass-cf649a.svg?&style=flat-square&logo=sass&logoColor=fff" />&nbsp;
 
-#### Деплой:
 
-Проект доступен по ссылке: https://romanovanton.github.io/pizza-shop/
